@@ -2,16 +2,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>{% block title %}{% endblock %} | Puddle</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    {% tailwind_css %}
+    {% comment %} {% tailwind_css %} {% endcomment %}
   </head>
 
-  <body class="bg-gray-50 font-serif leading-normal tracking-normal">
+  <body class="font-sans leading-normal tracking-normal max-w-screen-2xl mx-auto">
+  
+      <nav class="flex items-center justify-between px-10 py-5">
+        <a href="{% url 'index' %}" class="text-xl font-bold text-purple-900">Puddle</a>
+        <div class="flex items-center space-x-4">
+          <a class="text-lg font-bold">New Item</a>
+          <a class="text-lg font-bold">Browse</a>
+          <a class="bg-green-800 rounded-md text-white p-3">Sign Up</a>
+          <a class="bg-gray-600 rounded-md text-white p-3">Log In</a>
+
+        </div>
+      </nav>
+
+
     <div class="container mx-auto">{% block content %} 
       {% endblock %}
     </div>
+    <footer class="bg-gray-800 text-white flex items-center justify-between p-10">
+      <div class="w-3/6">
+        <p>Veritatis repellat delectus pariatur necessitatibus vel est saepeVeritatis repellat delectus pariatur necessitatibus vel est saepeVeritatis repellat delectus pariatur necessitatibus vel est saepe</p>
+      </div>
+      <div class="w-3/6 text-right flex  space-x-8 items-center justify-end">
+        <a href="{% url 'contact' %}" class="text-white font-semibold">Contact</a>
+        <a href="" class="text-white font-semibold">Privacy Policy</a>
+        <a href="" class="text-white font-semibold">Terms of use</a>
+      </div>
+
+    </footer>
   </body>
 </html>
